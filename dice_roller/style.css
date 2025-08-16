@@ -1,0 +1,40 @@
+
+body{
+    text-align: center;
+
+}.container{
+  font-size: 2rem;
+  border:2px solid black;
+  display: inline-block;
+  border-radius: 20px;
+  padding:40px;
+  background-color: pink;
+}
+
+button{
+  font-size: 1em;
+  border-radius: 10px;
+  background-color: rgb(125, 173, 239);
+  margin: 20px;
+}
+button:hover{
+  background-color: rgb(83, 202, 202);
+  box-shadow: 5px 5px gray;
+}
+#numofdice{
+  padding:10px;
+  border-radius: 20px;
+  margin:8px;
+  font-size: 1.5rem;
+
+}
+h1{
+  color:rgb(12, 103, 77);
+  text-shadow: 7px 7px rgb(255, 255, 255);
+
+}
+#ans{
+  margin:20px;
+    color:rgb(12, 103, 77);
+  text-shadow: 3px 3px rgb(255, 255, 255);
+}
