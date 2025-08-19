@@ -416,14 +416,322 @@
 //   console.log(element)
 // }
 
+// // .map() → applies a function to each element and returns a new array
+// const dates =["2024-01-2", "2025-02-28", "2023-09-23"];
+// const arrangedDates= dates.map(formatDates);
 
-// .map() → applies a function to each element and returns a new array
-const dates =["2024-01-2", "2025-02-28", "2023-09-23"];
-const arrangedDates= dates.map(formatDates);
+// function formatDates(element){
+//   const parts =element.split("-");
+//   return `${parts[1]}/${parts[2]}/${parts[0]}`;
+// }
 
-function formatDates(element){
-  const parts =element.split("-");
-  return `${parts[1]}/${parts[2]}/${parts[0]}`;
+// console.log(arrangedDates);
+
+
+
+//fiter() -> creates an array foltering out the otehr elements.
+//keeps only the element that is true 
+
+// let numbers =[2,3,4,5,6];
+// let evennumbers = numbers.filter(even);
+
+// function even(element){
+//   return element%2===0;
+  
+// }console.log(evennumbers);
+
+
+// const age =[15,16,20,21,23,24,25];
+// // const adult = age.filter(isuniStudent);
+// // const child = age.filter(isChild);
+// const adult = age.forEach(isuniStudent);
+
+// function isuniStudent(element){
+//    element>=21;
+// }
+// function isChild(element){
+//   return element<18;
+// }
+// console.log(adult);
+
+// // console.log(`The age of childrens are ${child}`);
+
+//.reduce() -> reduce the elemt of an array to single value 
+
+// const prices =[20,30,40,50,60];
+
+// const total = prices.reduce(sum);
+
+// console.log(total.toFixed(2));
+
+// function sum(previus, next){
+//   return previus + next;
+// }
+
+
+
+// const grade =[30,40,50,60,70,80];
+// const max = grade.reduce(getMax);
+// console.log(max);
+// const totalval =grade.reduce(total);
+// console.log(totalval);
+// function getMax(prev, next){
+//   return Math.max(prev, next);
+// }
+// function total(prev, next){
+//   return prev+next;
+// }
+
+
+// //function expression: way to define funciton as value or varaibale 
+// const hello =function(){
+//   console.log("Hello");
+// }
+
+// hello();
+
+// setTimeout(function(){
+//   console.log("Hello");
+// },3000);
+
+
+// const nums =[1,2,3,4,5,6];
+// const ans = nums.map(function(element){
+//   return Math.pow(element,2);
+// });
+
+// const cube= nums.map(function(element){
+//   return Math.pow(element,3);
+// })
+// const even = nums.filter(function(element){
+//   return element %2 ===0;
+// });
+// const odd = nums.filter(function(element){
+//   return element %2 !==0;
+// })
+// const total = nums.reduce(function(prev, element){
+//   return prev+element;
+// })
+// console.log(ans);
+// console.log(cube);
+// console.log(even);
+// console.log(odd);
+// console.log(total);
+
+
+//Arrow functions -> short way to write function expression, good for function we only use once
+
+// function hello(){   //noraml function
+//   console.log("hello");
+// }
+
+
+// const hello = function(){ //function ex[ression
+//   console.log("hello");
+// }
+
+// const hello = (name) =>console.log(`hello ${name}`);  //hello function
+
+// hello("neera");
+
+
+// settimeout(function(){
+//   console.log("hello");
+// },3000);
+
+
+// setTimeout = () => {console.log("hello")},3000;
+// setTimeout();
+
+// const nums = [1,2,3,4,5,6];
+
+// const square = nums.map((element) =>  Math.pow(element, 2));
+// const cube = nums.map((element) => Math.pow(element, 3));
+// const even = nums.filter((element) => element%2===0);
+// const total = nums.reduce((accumulator, element)=> accumulator+element);
+
+// console.log(square);
+// console.log(cube);
+// console.log(even);
+// console.log(total);
+
+//objects -> collection of properties or methods,, properties are the key value pairs
+//represents real world objects like people, product, EventCounts.
+//  const person1 = {
+//   firstname: "Luffy",
+//   lastName:"D",
+//   age :19,
+//   isPirate: true,
+//   sayHello: function(){console.log("Khaizoko oni owera naru")},
+//       eat: () => console.log("I eat meat"),
+
+//  }
+
+//  const person2 = {
+//   firstname :"Zoro",
+//   lastname :"Zuiro",
+//   age:20,
+//   isPirate:true,
+//     sayHello: function(){console.log("OOO")},
+//     eat: ()=> console.log("Give me booze"),
+//  }
+
+
+//  console.log(person1.firstname);
+//   console.log(person1.isPirate);
+//   person1.sayHello();
+//   person1.eat();
+//  console.log(person2.firstname);
+//   console.log(person2.isPirate);
+//   person2.sayHello();
+//   person2.eat();
+
+
+//this = refrence to the object where this is used
+//this does nto work with arrow function
+// const person1 ={
+//   fname: "Nami",
+//   food: "salad",
+//   sayHello: function(){console.log(`Hi I am ${this.fname}`)},
+//   eat: function(){console.log(`I only eat ${this.food}`)},
+// }
+// person1.sayHello();
+// person1.eat();
+
+
+
+//constructor -> special method for defining methods and properties of obj
+
+// function Car(make, model, color){
+//   this.make = make,
+//   this. model= model,
+//   this.color = color
+//   this.drive = function(){
+//     console.log(`You drive the ${this.make} `);
+//   }
+// }
+
+// const car1 = new Car ("Mercedes","sfasd", "black");
+// const car2 = new Car("ford","mustang", "red");
+
+// console.log(car1.make);
+// console.log(car1.model);
+// console.log(car1.color);
+// car1.drive();
+
+// console.log(car2.make);
+// console.log(car2.model);
+// console.log(car2.color);
+// car2.drive();
+
+
+//classes -> propvieds more sturcured and cleaner way to work with obj
+// class Products{
+//   constructor(name, price){
+//     this.name= name,
+//     this.price= price
+//   }
+//   displayProduct(){
+//     console.log(`Product ${this.name}`);
+//     console.log(`Price: ${this.price}`);
+//   }
+//   calculatetotal(salesTax){
+//     return this.price+(this.price*salesTax);
+//   }
+// }
+// const salesTax=0.05;
+// const product1 = new Products("Shirt", 10.99);
+// const product2 = new Products("pant", 20.99);
+// const product3 = new Products("Vest", 22.50);
+
+// product1.displayProduct();
+// const total = product1.calculatetotal(salesTax);
+
+// console.log(`the total with tax is $${total.toFixed(2)}`);
+
+
+
+//static -> keyword that defines propertiesa or methods of a class.
+
+// class Math{
+//   static PI =3.14159;
+//   static getDiameter(radius){
+//     return radius*2;
+//   }
+//   static getCircumference(radius){
+//     return 2* this.PI * radius;
+//   }
+// }
+// console.log(Math.PI);
+// console.log(Math.getDiameter(10));
+// console.log(Math.getCircumference(10));
+
+
+// class User {
+//   static userCount =0;
+
+//   constructor (username){
+//     this.username = username;
+//     User.userCount++;
+//   }
+//   sayhello(){
+//     console.log(`Hello my name is ${this.username}`);
+//   }
+//   static getuserCount(){
+//     console.log(`Active users are ${User.userCount}`);
+//   }
+// }
+
+// const user1 = new User("Luffy");
+// const user2 = new User("Zoro");
+
+// user1.sayhello();
+// console.log(user1.username);
+// console.log(User.userCount);
+// User.getuserCount();
+
+
+//Inheritence -> inherites from parent 
+
+class animal{
+  alive= true;
+
+  eat(){
+    console.log(`${this.name} is eating`);
+  }
+  sleep(){
+    console.log(`This ${this.name} is sleeping`);
+  }
 }
 
-console.log(arrangedDates);
+class Rabbit extends animal {
+  name ="rabit";
+  run(){
+    console.log(`${this.name} is running`);
+  }
+}
+class Fish extends animal {
+  name ="fish";
+  swim(){
+    console.log(`$(this.name) is swimming`)
+  }
+}
+class Racoon extends animal{
+  name ="racoon";
+}
+
+const rabbit = new Rabbit();
+const fish = new Fish();
+const racoon =new Racoon();
+
+console.log(rabbit.alive);
+rabbit.eat();
+rabbit.sleep();
+rabbit.run();
+
+fish.eat();
+fish.sleep();
+fish.swim();
+
+racoon.eat();
+racoon.sleep();
