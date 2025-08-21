@@ -693,45 +693,179 @@
 
 //Inheritence -> inherites from parent 
 
-class animal{
-  alive= true;
+// class animal{
+//   alive= true;
 
-  eat(){
-    console.log(`${this.name} is eating`);
+//   eat(){
+//     console.log(`${this.name} is eating`);
+//   }
+//   sleep(){
+//     console.log(`This ${this.name} is sleeping`);
+//   }
+// }
+
+// class Rabbit extends animal {
+//   name ="rabit";
+//   run(){
+//     console.log(`${this.name} is running`);
+//   }
+// }
+// class Fish extends animal {
+//   name ="fish";
+//   swim(){
+//     console.log(`$(this.name) is swimming`)
+//   }
+// }
+// class Racoon extends animal{
+//   name ="racoon";
+// }
+
+// const rabbit = new Rabbit();
+// const fish = new Fish();
+// const racoon =new Racoon();
+
+// console.log(rabbit.alive);
+// rabbit.eat();
+// rabbit.sleep();
+// rabbit.run();
+
+// fish.eat();
+// fish.sleep();
+// fish.swim();
+
+// racoon.eat();
+// racoon.sleep();
+
+
+//super -> this can be used to call the consutrucotr of paren helps in code reusuabilty 
+// class Animal{
+//   constructor(name,age){
+//        this.name =name;
+//     this.age =age;
+//   }
+//   move(){
+//     console.log(`The ${this.name} moves at a pace of ${this.speed} npm`);
+//   }
+
+// }
+
+// class Rabbit extends Animal{
+//   constructor(name,age,runSpeed){
+//     super(name,age);
+//     this.runSpeed = runSpeed;
+  
+//   }
+//   run(){
+//     console.log(`THis ${this.name} can run`);
+//     super.move(this.runSpeed);
+//   }
+// }
+// class Fish extends Animal {
+//  constructor(name,age,swimSpeed){
+//   super(name, age);
+//     this.swimSpeed = swimSpeed;
+  
+//   }
+//   swim()
+// {
+//   console.log(`This ${this.name} can swim`);
+//   super.move(this.swimSpeed);
+// }}
+// class Hwak extends Animal{
+//  constructor(name,age,flySpeed){
+//   super(name,age);
+//     this.flySpeed = flySpeed;
+  
+//   }
+//   fly(){
+//     console.log(`THis ${this.name} can fly`);
+//     super.move(this.flySpeed);
+//   }
+  
+// }
+
+// const rabbit = new Rabbit("rabbit", 1, 25);
+// const fish = new Fish("fish", 1, 25);
+// const hwak = new Hwak("hwak", 1, 25);
+
+// // console.log(rabbit);
+// // console.log(fish);
+// // console.log(hwak);
+
+// hwak.fly();
+
+
+//getters and setters in js -> geeter makes property readable adn setter makes then writable
+// class Rectangle{
+//   constructor(width, height){
+//     this.width =width;
+//     this.height=height;
+//   }
+//   set width(newwidth){
+//     if(newwidth>0){
+//       this._width = newwidth; //_this makes it a private property 
+//      }
+//      else{
+//       console.error("Width must be a positive number");
+//      }
+//   }  
+//   set height(newheight){
+//     if(newheight>0){
+//       this._height = newheight; //_this makes it a private property 
+//      }
+//      else{
+//       console.error("Height must be a positive number");
+//      }
+//     }
+//     get width(){
+//       return `${this._width.toFixed(1)} cm^2`;
+//     }
+//     get height(){
+//       return this._height;
+//     }
+//     get area(){
+//       return (this._width * this._height).toFixed(1);
+//     }
+// }
+
+// const rectangle = new Rectangle(4, 2); //this is a grabage value inorder to make the user not input these that's were getters and setters comes in 
+// console.log(rectangle.height);
+// console.log(rectangle.width);
+// console.log(rectangle.area);
+
+
+class Person{
+  constructor(first_name, last_name){
+    this.first_name=first_name;
+    this.last_name=last_name;
   }
-  sleep(){
-    console.log(`This ${this.name} is sleeping`);
+  set first_name(newfirst_name){
+    if(typeof newfirst_name=== "string" && newfirst_name.length>1){
+      this._first_name = newfirst_name;
+    }
+    else{
+      console.error('first name must be a non-empty string');
+    }
+  }
+  set last_name(newlast_name){
+    if(typeof newlast_name === "string" && newlast_name.length>0){
+      this._last_name = newlast_name;
+    }
+    else{
+      console.error("last name must be valid non empty string.");
+    }
+  }
+  get first_name(){
+    return this._first_name;
+  }
+  get last_name(){
+    return this._last_name;
+  }
+  get fullname(){
+    return this._first_name + " "+ this._last_name;
   }
 }
-
-class Rabbit extends animal {
-  name ="rabit";
-  run(){
-    console.log(`${this.name} is running`);
-  }
-}
-class Fish extends animal {
-  name ="fish";
-  swim(){
-    console.log(`$(this.name) is swimming`)
-  }
-}
-class Racoon extends animal{
-  name ="racoon";
-}
-
-const rabbit = new Rabbit();
-const fish = new Fish();
-const racoon =new Racoon();
-
-console.log(rabbit.alive);
-rabbit.eat();
-rabbit.sleep();
-rabbit.run();
-
-fish.eat();
-fish.sleep();
-fish.swim();
-
-racoon.eat();
-racoon.sleep();
+const person = new Person("Luffy", "D");
+console.log(person.first_name);
+console.log(person.last_name);
+console.log(person.fullname);
