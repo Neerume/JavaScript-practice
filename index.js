@@ -834,38 +834,203 @@
 // console.log(rectangle.area);
 
 
-class Person{
-  constructor(first_name, last_name){
-    this.first_name=first_name;
-    this.last_name=last_name;
-  }
-  set first_name(newfirst_name){
-    if(typeof newfirst_name=== "string" && newfirst_name.length>1){
-      this._first_name = newfirst_name;
-    }
-    else{
-      console.error('first name must be a non-empty string');
-    }
-  }
-  set last_name(newlast_name){
-    if(typeof newlast_name === "string" && newlast_name.length>0){
-      this._last_name = newlast_name;
-    }
-    else{
-      console.error("last name must be valid non empty string.");
-    }
-  }
-  get first_name(){
-    return this._first_name;
-  }
-  get last_name(){
-    return this._last_name;
-  }
-  get fullname(){
-    return this._first_name + " "+ this._last_name;
-  }
-}
-const person = new Person("Luffy", "D");
-console.log(person.first_name);
-console.log(person.last_name);
-console.log(person.fullname);
+// class Person{
+//   constructor(first_name, last_name){
+//     this.first_name=first_name;
+//     this.last_name=last_name;
+//   }
+//   set first_name(newfirst_name){
+//     if(typeof newfirst_name=== "string" && newfirst_name.length>1){
+//       this._first_name = newfirst_name;
+//     }
+//     else{
+//       console.error('first name must be a non-empty string');
+//     }
+//   }
+//   set last_name(newlast_name){
+//     if(typeof newlast_name === "string" && newlast_name.length>0){
+//       this._last_name = newlast_name;
+//     }
+//     else{
+//       console.error("last name must be valid non empty string.");
+//     }
+//   }
+//   get first_name(){
+//     return this._first_name;
+//   }
+//   get last_name(){
+//     return this._last_name;
+//   }
+//   get fullname(){
+//     return this._first_name + " "+ this._last_name;
+//   }
+// }
+// const person = new Person("Luffy", "D");
+// console.log(person.first_name);
+// console.log(person.last_name);
+// console.log(person.fullname);
+
+
+///destructuring
+//[] for array destructuring and {} for object destructing
+// let a =1;
+// let b=2;
+// [a,b] =[b,a];
+
+// console.log(a);
+// console.log(b);
+
+//swap elements
+const colors =["red","green", "blue", "black","white"];
+
+// [colors[0],colors[4]]= [colors[4],colors[0]];
+// console.log(colors);
+// const [firstcolor, secondcolor, thirdcolor, fourthcolor, ...extracolors] =colors;
+// console.log(firstcolor);
+
+// console.log(extracolors);
+
+//extract value from object 
+// const person1={
+//   firstname:"Monkey",
+//   middlename:"D",
+//   lastname:"luffy",
+// }
+// const person2={
+//   firstname:"Trafalugar",
+//   lastname:"Law",
+// }
+
+// const {firstname, lastname, middlename, age} =person1;
+// console.log(firstname);
+
+// function displayperson({firstname, middlename=" ",lastname}){
+//   console.log(`name: ${firstname} middlename: ${middlename} lastname: ${lastname}`);
+// }
+// const person1={
+//   firstname:"Monkey",
+//   middlename:"D",
+//   lastname:"luffy",
+// }
+// const person2={
+//   firstname:"Trafalugar",
+//   lastname:"Law",
+// }
+// displayperson(person2);
+
+
+//nested objects -> objects inside othe object
+// const person ={
+//   fullname: "Monkey D luffy",
+//   isPirate: true,
+//   hobbies:["eat", "fight", "help friends"],
+//   address:{
+//     street:"1233 sea",
+//     country:"sea"
+//   }
+// }
+
+// console.log(person.fullname);
+// console.log(person.isPirate);
+// console.log(person.hobbies);
+// console.log(person.address.street);
+
+
+
+//example here, address is the child obj of person object.
+
+// class Address{
+//   constructor(street, city, country){
+//     this.street=street;
+//     this.counrtry=country;
+//     this.city =city;
+//   }
+// }
+// class Person{
+//   constructor(name, age, ...address){
+//     this.name= name;
+//     this.age= age;
+//     this.address= new Address(...address);
+//   }
+// }
+// const person1 = new Person("Monkey D Luffy", "20", "123 sea",
+//                                                    "All Blue",
+//                                                    "Ocean/Sea"
+// );
+// const person2 = new Person("Zoro", "20", "224 sea",
+//                                                    "All Blue",
+//                                                    "Ocean/Sea"
+// );
+// const person3 = new Person("Sanji", "20", "454 sea",
+//                                                    "East Blue",
+//                                                    "Ocean/Sea"
+// );
+
+// console.log(person1.name);
+// console.log(person1.age);
+// console.log(person1.address.street);
+
+// console.log(person3.name);
+// console.log(person3.age);
+// console.log(person3.address.street);
+
+// console.log(person2.name);
+// console.log(person2.age);
+// console.log(person2.address.street);
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//example (array of objects) 
+//array of objetcs
+// const fruits =[{name: "apple", color: "red", calories:95},
+//               {name: "bananna", color: "yellow", calories:55},
+//               {name: "orange", color: "orange", calories:65},
+//               {name: "mango", color: "yellow", calories:85},
+//               {name: "pineapple", color: "yellow", calories:45}];
+
+// console.log(fruits[0].name);
+// fruits.push({name:"grapes", color:"green", calories:23});
+
+// console.log(fruits);
+
+// //...............forEach..........
+
+// fruits.forEach(fruit => console.log(fruit));
+
+// //...........map...........
+// const fruitnames = fruits.map(fruit => fruit.name);
+// const fruitcolor = fruits.map(fruit => fruit.color);
+// console.log(fruitnames);
+// console.log(fruitcolor);
+
+//...........filter..................
+// const yellowfruits = fruits.filter(fruit => fruit.color==="yellow");
+// const lowcalories = fruits.filter(fruit=> fruit.calories<60);
+// console.log(yellowfruits);
+// console.log(lowcalories);
+
+//..............reduce...................................
+// const highcal = fruits.reduce((max,fruit)=> fruit.calories>max.calories?fruit:max);
+// const lowcal = fruits.reduce((min, fruit)=> fruit.calories<min.calories?fruit:min);
+// console.log(highcal);
+// console.log(lowcal);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//sort() -> sort elemnt of arry in place, we trat numbers as string as well
+
+// let fruits =["apple", "orange", "banana", "conconut", "mango"];
+
+// fruits.sort();
+// console.log(fruits);
+
+
+// let numbers =[2,4,1,3,4,10];
+// numbers.sort((a,b)=> a-b);
+// console.log(numbers);
+
+const people =[{name:"Neeru", age:20, gpa:4.0},
+                {name:"Mandira", age:23, gpa:3.75},
+                {name:"Aastha", age:21, gpa:3.75}
+];
+people.sort((a,b)=> a.age-b.age);
+console.log(people);
