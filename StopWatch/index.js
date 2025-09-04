@@ -13,8 +13,8 @@ function start(){
 }
 function stop(){
   if(isRunning){
-    clearInterval(timer);
-    isRunning=false;
+    clearInterval(timer); //stops the timer
+    isRunning=false; 
   }
 }
 function reset(){
@@ -31,6 +31,11 @@ function update(){
   let minutes = Math.floor(elapsedTime/(1000*60)%60); //to change to min
   let sec = Math.floor(elapsedTime/1000%60); //converting into sec
   let miliseconds =Math.floor(elapsedTime%1000/10);
+
+  hours =String(hours).padStart(2,"0");
+  minutes =String(minutes).padStart(2,"0");
+  sec =String(sec).padStart(2,"0");
+  miliseconds =String(miliseconds).padStart(2,"0");
 
   display.textContent=`${hours}:${minutes}:${sec}:${miliseconds}`
 }
